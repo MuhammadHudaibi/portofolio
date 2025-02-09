@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/output.css" rel="stylesheet">
+    <title>Portfolio - Muhammad Hudaibi</title>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-gray-900 text-white p-4">
+        <nav>
+            <div class="container mx-auto flex justify-between items-center">
+                <a href="#" class="text-xl font-bold">Hudaibi</a>
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+                <ul id="menu" class="hidden md:flex space-x-6">
+                    <li><a href="#about" class="hover:text-amber-300 smooth-scroll">About</a></li>
+                    <li><a href="#projects" class="hover:text-amber-300 smooth-scroll">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-amber-300 smooth-scroll">Contact</a></li>
+                </ul>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden flex-col items-center space-y-4 mt-4">
+                <a href="#about" class="block hover:text-amber-300 smooth-scroll">About</a>
+                <a href="#projects" class="block hover:text-amber-300 smooth-scroll">Projects</a>
+                <a href="#contact" class="block hover:text-amber-300 smooth-scroll">Contact</a>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="text-center py-20 bg-gray-800 text-white">
+        <h1 class="text-4xl font-bold">Hi, I'm Muhammad Hudaibi</h1>
+        <p class="mt-4 text-lg">A Flutter Developer & Fresh Graduate in Accounting</p>
+    </section>
+    
+    <section id="about" class="container mx-auto py-20 px-6">
+        <h2 class="text-3xl font-bold text-gray-900">About Me</h2>
+        <p class="mt-4 text-gray-700">I'm a fresh graduate with a strong passion for mobile development using Flutter. I love building user-friendly applications that solve real-world problems.</p>
+    </section>
+    
+    <section id="projects" class="bg-gray-200 py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-900">Projects</h2>
+            <div class="grid md:grid-cols-2 gap-6 mt-6">
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold">DRIVENOW</h3>
+                    <p class="text-gray-700">A vehicle rental app for the deaf community.</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold">Other Projects</h3>
+                    <p class="text-gray-700">More projects will be added soon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="container mx-auto py-20 px-6">
+        <h2 class="text-3xl font-bold text-gray-900">Contact</h2>
+        <p class="mt-4 text-gray-700">Feel free to reach out to me for collaboration or opportunities.</p>
+        <a href="mailto:muhhudaibi11@gmail.com" class="mt-4 inline-block bg-amber-400 text-white px-6 py-2 rounded-lg shadow-md hover:bg-amber-500">Email Me</a>
+    </section>
+    
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
